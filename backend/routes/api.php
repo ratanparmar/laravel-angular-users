@@ -13,6 +13,20 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['middleware' => 'cors'], function() {
+    Route::get('user','UserController@index');
+});
+
+Route::group(['middleware' => 'cors'], function() {
+    Route::get('user/{id}','UserController@showUser');
+});
+
+Route::group(['middleware' => 'cors'], function() {    
+    Route::post('user','UserController@createUser');
+});
+Route::group(['middleware' => 'cors'], function() {
+        Route::put('user/{id}','UserController@updateUser');
+    });
+Route::group(['middleware' => 'cors'], function() {        
+Route::delete('user/{id}','UserController@deleteUser');
 });
