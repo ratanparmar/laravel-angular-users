@@ -7,6 +7,9 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UserAddComponent } from './user-add/user-add.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
+import { FormsModule} from '@angular/forms';
 //import { UserService } from './user.service';
 
 @NgModule({
@@ -14,13 +17,16 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     LoginComponent,
     SignupComponent,
-    UserListComponent
+    UserListComponent,
+    UserAddComponent,
+    UserEditComponent
   ],
   imports: [
     RouterModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

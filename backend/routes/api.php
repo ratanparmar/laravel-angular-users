@@ -13,8 +13,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('user','UserController@index');
-Route::get('user/{id}','UserController@showUser');
-Route::post('user','UserController@createUser');
-Route::put('user/{id}','UserController@updateUser');
-Route::delete('user/{id}','UserController@deleteUser');
+Route::get('user','UserController@index')->middleware('cors');
+Route::get('user/{id}','UserController@showUser')->middleware('cors');
+Route::post('users','UserController@createUser')->middleware('cors');
+Route::put('user/{id}','UserController@updateUser')->middleware('cors');
+Route::delete('user/{id}','UserController@deleteUser')->middleware('cors');

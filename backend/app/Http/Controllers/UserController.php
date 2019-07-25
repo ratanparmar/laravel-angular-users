@@ -15,6 +15,7 @@ class UserController extends Controller
         return User:: find($id);
     }
     public function createUser(Request $request){
+        echo $request;
         return User::create($request->all());
     }
     public function updateUser(Request $request,$id){

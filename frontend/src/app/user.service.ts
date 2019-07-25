@@ -11,20 +11,23 @@ export class UserService {
   PHP_API_SERVER = "http://127.0.0.1:8000";
   
   getUsers():Observable<User[]>{
-    console.log(this.PHP_API_SERVER);
+    
     return this.http.get<User[]>(`${this.PHP_API_SERVER}/api/user`);
   }
 
-  addUsers(user:User):Observable<User>{
-    return this.http.post<User>(`${this.PHP_API_SERVER}/api/user`,user);
+  addUsers(user:User){
+    
+    return this.http.post(`${this.PHP_API_SERVER}/api/users`,user,{responseType: 'text'});
   }
 
   updateUsers(id:number,user:User):Observable<User>{
-    return this.http.put<User>(`${this.PHP_API_SERVER}api/user/$id`,user);
+    //console.log(id)
+    //console.log(user)
+    return this.http.put<User>(`${this.PHP_API_SERVER}/api/user/${id}`,user);
   }
 
   deleteUsers(id:number):Observable<{}>{
-    return this.http.delete(`${this.PHP_API_SERVER}api/user/$id`);
+    return this.http.delete(`${this.PHP_API_SERVER}/api/user/${id}`);
   }
 }
 

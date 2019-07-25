@@ -4,7 +4,16 @@
     Welcome to {{ title }}!
   </h1>
   <div class="container">
-    <a routerLink='/user-list'>Users List</a>
+      <nav class="navbar navbar-expand-sm bg-info navbar-dark">
+          <ul class="navbar-nav">
+            <li>
+    <a  routerLink='/user-list' routerLinkActive="nav-item active">Users List</a>
+    </li>
+    <li>
+    <a routerLink='/user-add' routerLinkActive="active-link">Add User</a>
+    </li>
+    </ul>
+    </nav>
     <router-outlet></router-outlet>
   </div>
   </div>
